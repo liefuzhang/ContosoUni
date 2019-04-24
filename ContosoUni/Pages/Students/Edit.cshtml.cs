@@ -13,9 +13,9 @@ namespace ContosoUni.Pages.Students
 {
     public class EditModel : PageModel
     {
-        private readonly ContosoUni.Models.SchoolContext _context;
+        private readonly SchoolContext _context;
 
-        public EditModel(ContosoUni.Models.SchoolContext context)
+        public EditModel(SchoolContext context)
         {
             _context = context;
         }
@@ -30,7 +30,7 @@ namespace ContosoUni.Pages.Students
                 return NotFound();
             }
 
-            Student = await _context.Student.FirstOrDefaultAsync(m => m.ID == id);
+            Student = await _context.Student.FindAsync(id);
 
             if (Student == null)
             {
@@ -39,37 +39,25 @@ namespace ContosoUni.Pages.Students
             return Page();
         }
 
-        public async Task<IActionResult> OnPostAsync()
+        public async Task<IActionResult> OnPostAsync(int? id)
         {
             if (!ModelState.IsValid)
             {
                 return Page();
             }
 
-            _context.Attach(Student).State = EntityState.Modified;
+            var studentToUpdate = await _context.Student.FindAsync(id);
 
-            try
+            if (await TryUpdateModelAsync<Student>(
+                studentToUpdate,
+                "student",
+                s => s.FirstMidName, s => s.LastName, s => s.EnrollmentDate))
             {
                 await _context.SaveChangesAsync();
-            }
-            catch (DbUpdateConcurrencyException)
-            {
-                if (!StudentExists(Student.ID))
-                {
-                    return NotFound();
-                }
-                else
-                {
-                    throw;
-                }
+                return RedirectToPage("./Index");
             }
 
-            return RedirectToPage("./Index");
-        }
-
-        private bool StudentExists(int id)
-        {
-            return _context.Student.Any(e => e.ID == id);
+            return Page();
         }
     }
 }

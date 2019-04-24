@@ -38,7 +38,7 @@ namespace ContosoUni.Pages.Students
 
             if (await TryUpdateModelAsync<Student>(
                 emptyStudent,
-                "student",   // Prefix for form value.
+                "student",   // Prefix for form value. Case insensitive
                 s => s.FirstMidName, s => s.LastName, s => s.EnrollmentDate))
             {
                 _context.Student.Add(emptyStudent);
