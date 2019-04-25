@@ -5,16 +5,16 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.EntityFrameworkCore;
-using ContosoUni.Models;
+using ContosoUniversity.Models;
 using ContosoUniversity.Models;
 
 namespace ContosoUni.Pages.Students
 {
     public class DetailsModel : PageModel
     {
-        private readonly ContosoUni.Models.SchoolContext _context;
+        private readonly ContosoUniversity.Models.SchoolContext _context;
 
-        public DetailsModel(ContosoUni.Models.SchoolContext context)
+        public DetailsModel(ContosoUniversity.Models.SchoolContext context)
         {
             _context = context;
         }
