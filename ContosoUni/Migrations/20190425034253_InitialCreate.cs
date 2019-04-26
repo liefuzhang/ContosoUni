@@ -2,7 +2,7 @@
 using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.EntityFrameworkCore.Migrations;
 
-namespace ContosoUni.Migrations
+namespace ContosoUniversity.Migrations
 {
     public partial class InitialCreate : Migration
     {

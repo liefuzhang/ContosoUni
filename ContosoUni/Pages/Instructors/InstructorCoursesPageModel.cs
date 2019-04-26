@@ -4,9 +4,9 @@ using ContosoUniversity.Models.SchoolViewModels;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using System.Collections.Generic;
 using System.Linq;
-using ContosoUni.Data;
+using ContosoUniversity.Data;
 
-namespace ContosoUni.Pages.Instructors {
+namespace ContosoUniversity.Pages.Instructors {
     public class InstructorCoursesPageModel : PageModel {
 
         public List<AssignedCourseData> AssignedCourseDataList;

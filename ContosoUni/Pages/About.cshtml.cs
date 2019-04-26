@@ -4,7 +4,7 @@ using Microsoft.EntityFrameworkCore;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using ContosoUni.Data;
+using ContosoUniversity.Data;
 using ContosoUniversity.Models;
 using ContosoUniversity.Models;
 

@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Linq;
-using ContosoUni.Data;
+using ContosoUniversity.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 using ContosoUniversity.Models;

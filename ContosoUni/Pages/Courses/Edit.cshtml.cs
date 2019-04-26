@@ -2,7 +2,7 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using System.Threading.Tasks;
-using ContosoUni.Data;
+using ContosoUniversity.Data;
 
 namespace ContosoUniversity.Pages.Courses {
     public class EditModel : DepartmentNamePageModel {

@@ -2,14 +2,14 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using ContosoUni.Data;
-using ContosoUni.Models.SchoolViewModels;
+using ContosoUniversity.Data;
+using ContosoUniversity.Models.SchoolViewModels;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.EntityFrameworkCore;
 using ContosoUniversity.Models;
 
-namespace ContosoUni.Pages.Courses
+namespace ContosoUniversity.Pages.Courses
 {
     public class IndexModel : PageModel
     {
