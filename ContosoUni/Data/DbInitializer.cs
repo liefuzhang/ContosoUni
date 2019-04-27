@@ -11,7 +11,7 @@ namespace ContosoUniversity.Data {
             //context.Database.EnsureCreated();
 
             // Look for any students.
-            if (context.Student.Any()) {
+            if (context.Students.Any()) {
                 return;   // DB has been seeded
             }
 
@@ -36,7 +36,7 @@ namespace ContosoUniversity.Data {
             };
 
             foreach (Student s in students) {
-                context.Student.Add(s);
+                context.Students.Add(s);
             }
             context.SaveChanges();
 
@@ -228,12 +228,12 @@ namespace ContosoUniversity.Data {
             };
 
             foreach (Enrollment e in enrollments) {
-                var enrollmentInDataBase = context.Enrollment.Where(
+                var enrollmentInDataBase = context.Enrollments.Where(
                     s =>
                             s.Student.ID == e.StudentID &&
                             s.Course.CourseID == e.CourseID).SingleOrDefault();
                 if (enrollmentInDataBase == null) {
-                    context.Enrollment.Add(e);
+                    context.Enrollments.Add(e);
                 }
             }
             context.SaveChanges();

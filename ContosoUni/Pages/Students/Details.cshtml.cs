@@ -29,7 +29,7 @@ namespace ContosoUniversity.Pages.Students
                 return NotFound();
             }
 
-            Student = await _context.Student
+            Student = await _context.Students
                 .Include(s => s.Enrollments)
                 .ThenInclude(e => e.Course)
                 .AsNoTracking()

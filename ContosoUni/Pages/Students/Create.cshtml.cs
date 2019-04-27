@@ -41,7 +41,7 @@ namespace ContosoUniversity.Pages.Students
                 "student",   // Prefix for form value. Case insensitive
                 s => s.FirstMidName, s => s.LastName, s => s.EnrollmentDate))
             {
-                _context.Student.Add(emptyStudent);
+                _context.Students.Add(emptyStudent);
                 await _context.SaveChangesAsync();
                 return RedirectToPage("./Index");
             }
